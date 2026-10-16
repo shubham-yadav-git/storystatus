@@ -1,0 +1,125 @@
+name: Release Build
+
+on:
+  workflow_dispatch:  # Manual only to keep push flow clean
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Check for signing secrets
+        id: check_secrets
+        run: |
+          if [ -n "${{ secrets.KEYSTORE_BASE64 }}" ] && [ "${{ secrets.KEYSTORE_BASE64 }}" != "" ]; then
+            echo "has_keystore=true" >> $GITHUB_OUTPUT
+            echo "Keystore secret found"
+          else
+            echo "has_keystore=false" >> $GITHUB_OUTPUT
+            echo "No keystore secret configured - will build unsigned"
+          fi
+      
+      - name: Decode Keystore
+        if: steps.check_secrets.outputs.has_keystore == 'true'
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > $GITHUB_WORKSPACE/keystore-original
+          
+          if [ ! -s $GITHUB_WORKSPACE/keystore-original ]; then
+            echo "Error: Keystore decode failed - file is empty"
+            exit 1
+          fi
+          
+          if file $GITHUB_WORKSPACE/keystore-original | grep -q "Java KeyStore"; then
+            echo "Keystore is already in JKS format"
+            mv $GITHUB_WORKSPACE/keystore-original $GITHUB_WORKSPACE/keystore.jks
+            echo "KEYSTORE_TYPE=JKS" >> $GITHUB_ENV
+          else
+            echo "Converting PKCS12 keystore to JKS format"
+            keytool -importkeystore \
+              -srckeystore $GITHUB_WORKSPACE/keystore-original \
+              -srcstoretype PKCS12 \
+              -srcstorepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+              -destkeystore $GITHUB_WORKSPACE/keystore.jks \
+              -deststoretype JKS \
+              -deststorepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+              -noprompt
+            echo "KEYSTORE_TYPE=JKS" >> $GITHUB_ENV
+            rm $GITHUB_WORKSPACE/keystore-original
+          fi
+      
+      - name: Build Release AAB (Signed)
+        if: steps.check_secrets.outputs.has_keystore == 'true'
+        run: ./gradlew bundleRelease --stacktrace
+        env:
+          CI: true
+          KEYSTORE_FILE: ${{ github.workspace }}/keystore.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_TYPE: ${{ env.KEYSTORE_TYPE }}
+      
+      - name: Build Release AAB (Unsigned)
+        if: steps.check_secrets.outputs.has_keystore == 'false'
+        run: ./gradlew bundleRelease --stacktrace
+      
+      - name: Build Release APK (Signed)
+        if: steps.check_secrets.outputs.has_keystore == 'true'
+        run: ./gradlew assembleRelease --stacktrace
+        env:
+          CI: true
+          KEYSTORE_FILE: ${{ github.workspace }}/keystore.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_TYPE: ${{ env.KEYSTORE_TYPE }}
+      
+      - name: Build Release APK (Unsigned)
+        if: steps.check_secrets.outputs.has_keystore == 'false'
+        run: ./gradlew assembleRelease --stacktrace
+      
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.get_version.outputs.VERSION }}
+          draft: false
+          prerelease: false
+          files: |
+            app/build/outputs/bundle/release/*.aab
+            app/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Upload AAB Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-aab
+          path: app/build/outputs/bundle/release/*.aab
+          retention-days: 30
+      
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/*.apk
+          retention-days: 30
