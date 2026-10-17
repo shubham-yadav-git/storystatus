@@ -83,6 +83,12 @@ jobs:
       - name: Prepare Service Account JSON
         run: |
           SECRET_VAL="${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}"
+          if [ -z "$SECRET_VAL" ]; then
+            echo "❌ Error: PLAY_STORE_SERVICE_ACCOUNT_JSON secret is empty or not configured in GitHub repository settings!"
+            echo "Please configure this secret in GitHub: Settings -> Secrets and variables -> Actions"
+            exit 1
+          fi
+          
           if [[ "$SECRET_VAL" =~ ^[[:space:]]*\{ ]]; then
             echo "$SECRET_VAL" > $GITHUB_WORKSPACE/service-account.json
             echo "Service account JSON provided as raw text."
@@ -92,7 +98,7 @@ jobs:
           fi
           
           if ! python3 -c "import json; json.load(open('$GITHUB_WORKSPACE/service-account.json'))" 2>/dev/null; then
-            echo "❌ Error: service-account.json is not valid JSON!"
+            echo "❌ Error: service-account.json is not valid JSON! Please check your PLAY_STORE_SERVICE_ACCOUNT_JSON secret."
             exit 1
           fi
       
