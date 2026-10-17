@@ -24,11 +24,14 @@ android {
     signingConfigs {
         create("release") {
             val keystorePath = System.getenv("KEYSTORE_FILE") ?: System.getenv("ANDROID_KEYSTORE_PATH") ?: project.findProperty("KEYSTORE_FILE") as String? ?: project.findProperty("ANDROID_KEYSTORE_PATH") as String?
-            if (keystorePath != null && file(keystorePath).exists()) {
-                storeFile = file(keystorePath)
-                storePassword = System.getenv("KEYSTORE_PASSWORD") ?: System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: project.findProperty("KEYSTORE_PASSWORD") as String?
-                keyAlias = System.getenv("KEY_ALIAS") ?: System.getenv("ANDROID_KEY_ALIAS") ?: project.findProperty("KEY_ALIAS") as String?
-                keyPassword = System.getenv("KEY_PASSWORD") ?: System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: project.findProperty("KEY_PASSWORD") as String?
+            if (keystorePath != null) {
+                val f = file(keystorePath)
+                if (f.exists()) {
+                    storeFile = f
+                    storePassword = System.getenv("KEYSTORE_PASSWORD") ?: System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: project.findProperty("KEYSTORE_PASSWORD") as String?
+                    keyAlias = System.getenv("KEY_ALIAS") ?: System.getenv("ANDROID_KEY_ALIAS") ?: project.findProperty("KEY_ALIAS") as String?
+                    keyPassword = System.getenv("KEY_PASSWORD") ?: System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: project.findProperty("KEY_PASSWORD") as String?
+                }
             }
         }
     }
@@ -42,7 +45,9 @@ android {
                 "proguard-rules.pro"
             )
             signingConfigs.findByName("release")?.let {
-                signingConfig = it
+                if (it.storeFile != null && it.storeFile!!.exists()) {
+                    signingConfig = it
+                }
             }
         }
     }
