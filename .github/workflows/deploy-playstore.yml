@@ -49,7 +49,6 @@ jobs:
           
           if [ ! -s $GITHUB_WORKSPACE/keystore-original ]; then
             echo "❌ Error: Keystore decode failed - file is empty"
-            echo "Please configure KEYSTORE_BASE64 secret in GitHub repository settings"
             exit 1
           fi
           
@@ -81,9 +80,21 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEYSTORE_TYPE: ${{ env.KEYSTORE_TYPE }}
       
-      - name: Decode Service Account JSON
+      - name: Prepare Service Account JSON
         run: |
-          echo "${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}" | base64 --decode > $GITHUB_WORKSPACE/service-account.json
+          SECRET_VAL="${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}"
+          if [[ "$SECRET_VAL" =~ ^[[:space:]]*\{ ]]; then
+            echo "$SECRET_VAL" > $GITHUB_WORKSPACE/service-account.json
+            echo "Service account JSON provided as raw text."
+          else
+            echo "$SECRET_VAL" | base64 --decode > $GITHUB_WORKSPACE/service-account.json
+            echo "Service account JSON decoded from base64."
+          fi
+          
+          if ! python3 -c "import json; json.load(open('$GITHUB_WORKSPACE/service-account.json'))" 2>/dev/null; then
+            echo "❌ Error: service-account.json is not valid JSON!"
+            exit 1
+          fi
       
       - name: Upload to Google Play
         uses: r0adkll/upload-google-play@v1.1.3
