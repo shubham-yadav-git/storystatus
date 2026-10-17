@@ -118,7 +118,6 @@ jobs:
           track: ${{ inputs.track || 'internal' }}
           status: completed
           inAppUpdatePriority: 2
-          changesNotSentForReview: true
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
