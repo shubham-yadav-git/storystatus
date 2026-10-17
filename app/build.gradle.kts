@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.sky.storystatus"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.sky.storystatus"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
