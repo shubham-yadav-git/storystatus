@@ -26,7 +26,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
@@ -166,7 +165,7 @@ fun HomeScreen(
                 ) {
                     Column(modifier = Modifier.padding(top = Dimens.SpaceLg)) {
                         SectionHeader(
-                            title = "✨ Featured Showcase",
+                            title = "Featured",
                             modifier = Modifier.padding(horizontal = Dimens.SpaceLg),
                             actionLabel = "See All",
                             onAction = onSearchClick
@@ -216,13 +215,13 @@ fun HomeScreen(
         // ── Trending / Popular Section Header ──
         item(span = { GridItemSpan(maxLineSpan) }) {
             SectionHeader(
-                title = if (selectedCategory == "All") "Curated Popular" else selectedCategory,
+                title = if (selectedCategory == "All") "Popular" else selectedCategory,
                 modifier = Modifier.padding(
                     start = Dimens.SpaceLg,
                     end = Dimens.SpaceLg,
                     top = Dimens.SpaceLg
                 ),
-                actionLabel = "${displayTemplates.size} designs"
+                actionLabel = if (displayTemplates.size > 0) "${displayTemplates.size} designs" else null
             )
         }
 
@@ -261,64 +260,54 @@ fun HomeScreen(
     }
 }
 
-/**
- * Compact, clean hero header with wordmark, welcoming subtitle, favorites shortcut,
- * and quick-search entry point.
- */
 @Composable
 private fun CompactHeroHeader(
     favoritesCount: Int,
     onSearchClick: () -> Unit,
     onFavoritesClick: () -> Unit
 ) {
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(bottomStart = Dimens.RadiusXl, bottomEnd = Dimens.RadiusXl))
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        StatusWalaColors.HeaderGradientStart,
-                        StatusWalaColors.HeaderGradientEnd
-                    )
-                )
-            )
+            .background(MaterialTheme.colorScheme.surface)
+            .statusBarsPadding()
     ) {
+        // Thin primary accent stripe — brand anchor, not a decoration
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(3.dp)
+                .background(MaterialTheme.colorScheme.primary)
+        )
+
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .statusBarsPadding()
-                .padding(horizontal = Dimens.SpaceLg, vertical = Dimens.SpaceLg)
+                .padding(horizontal = Dimens.SpaceLg)
+                .padding(top = Dimens.SpaceMd, bottom = Dimens.SpaceMd)
         ) {
-            // Top row: Brand Wordmark + Favorites shortcut
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column {
-                    Text(
-                        text = "StoryStatus",
-                        style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Black,
-                        color = Color.White
-                    )
-                    Text(
-                        text = "Create, customize & share status",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.82f)
-                    )
-                }
+                Text(
+                    text = "StoryStatus",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Black,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
 
-                // Favorites shortcut button
                 Box(
                     modifier = Modifier
-                        .clip(CircleShape)
-                        .background(Color.White.copy(alpha = 0.18f))
-                        .clickable(
-                            onClickLabel = "View saved favorites",
-                            onClick = onFavoritesClick
+                        .clip(RoundedCornerShape(Dimens.RadiusSm))
+                        .background(
+                            if (favoritesCount > 0)
+                                Color(0xFFFF4081).copy(alpha = 0.10f)
+                            else
+                                MaterialTheme.colorScheme.surfaceVariant
                         )
+                        .clickable(onClickLabel = "View saved favorites", onClick = onFavoritesClick)
                         .padding(horizontal = Dimens.SpaceMd, vertical = Dimens.SpaceSm)
                 ) {
                     Row(
@@ -328,15 +317,15 @@ private fun CompactHeroHeader(
                         Icon(
                             imageVector = Icons.Filled.Favorite,
                             contentDescription = "Favorites",
-                            tint = Color(0xFFFF4081),
-                            modifier = Modifier.size(18.dp)
+                            tint = if (favoritesCount > 0) Color(0xFFFF4081) else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(16.dp)
                         )
                         if (favoritesCount > 0) {
                             Text(
                                 text = "$favoritesCount",
                                 style = MaterialTheme.typography.labelSmall,
                                 fontWeight = FontWeight.Bold,
-                                color = Color.White
+                                color = Color(0xFFFF4081)
                             )
                         }
                     }
@@ -345,30 +334,26 @@ private fun CompactHeroHeader(
 
             Spacer(modifier = Modifier.height(Dimens.SpaceMd))
 
-            // Accessible, compact search tap target
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(Dimens.RadiusFull))
-                    .background(Color.White.copy(alpha = 0.16f))
-                    .clickable(
-                        onClickLabel = "Open search and explore",
-                        onClick = onSearchClick
-                    )
-                    .padding(horizontal = Dimens.SpaceLg, vertical = 11.dp),
+                    .clip(RoundedCornerShape(Dimens.RadiusMd))
+                    .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f))
+                    .clickable(onClickLabel = "Open search and explore", onClick = onSearchClick)
+                    .padding(horizontal = Dimens.SpaceMd, vertical = 13.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
                     imageVector = Icons.Filled.Search,
-                    contentDescription = "Search icon",
-                    tint = Color.White.copy(alpha = 0.8f),
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.size(Dimens.IconSizeMd)
                 )
-                Spacer(modifier = Modifier.width(Dimens.SpaceMd))
+                Spacer(modifier = Modifier.width(Dimens.SpaceSm))
                 Text(
                     text = "Search quotes, shayari, attitude...",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Color.White.copy(alpha = 0.7f)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
                 )
             }
         }

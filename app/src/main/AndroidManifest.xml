@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Explicit SDK versions to ensure Play Console reads targetSdk correctly -->
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="34" />
-
     <!-- For saving images to MediaStore on Android 9 and below -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
 

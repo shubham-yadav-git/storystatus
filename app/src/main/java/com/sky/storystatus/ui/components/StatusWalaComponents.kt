@@ -57,6 +57,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.sky.storystatus.export.DefaultStatusImageRenderer
 import com.sky.storystatus.export.ThumbnailCache
 import com.sky.storystatus.model.StatusTemplate
@@ -294,17 +295,25 @@ fun SectionHeader(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = title,
-            style = MaterialTheme.typography.titleMedium,
+            text = title.uppercase(),
+            style = MaterialTheme.typography.labelMedium,
             fontWeight = FontWeight.Bold,
+            letterSpacing = 1.sp,
             color = MaterialTheme.colorScheme.onSurface
         )
         if (actionLabel != null && onAction != null) {
             Text(
                 text = actionLabel,
-                style = MaterialTheme.typography.labelLarge,
+                style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.clickable { onAction() }
+            )
+        } else if (actionLabel != null) {
+            Text(
+                text = actionLabel,
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }

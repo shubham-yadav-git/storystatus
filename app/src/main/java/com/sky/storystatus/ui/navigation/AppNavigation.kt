@@ -90,7 +90,7 @@ fun MainApp(viewModel: TemplateViewModel = viewModel()) {
             if (showBottomBar) {
                 NavigationBar(
                     containerColor = MaterialTheme.colorScheme.surface,
-                    tonalElevation = 2.dp
+                    tonalElevation = 0.dp
                 ) {
                     bottomBarItems.forEach { screen ->
                         val selected = currentRoute == screen.route
