@@ -27,7 +27,7 @@ class TemplateRepositoryTest {
 
     @Test
     fun testCatalogTotalCountAndUniqueIds() {
-        assertEquals("Catalog should contain exactly 272 templates", 272, allTemplates.size)
+        assertEquals("Catalog should contain exactly 304 templates", 304, allTemplates.size)
 
         val ids = allTemplates.map { it.id }
         val uniqueIds = ids.toSet()
@@ -46,32 +46,32 @@ class TemplateRepositoryTest {
     fun testCategoryDistribution() {
         val counts = allTemplates.groupingBy { it.category }.eachCount()
 
-        assertEquals(37, counts["Attitude"])
-        assertEquals(37, counts["Hindi Shayari"])
-        assertEquals(35, counts["Love"])
-        assertEquals(35, counts["Motivation"])
-        assertEquals(33, counts["Friendship"])
-        assertEquals(31, counts["Sad"])
-        assertEquals(31, counts["Birthday"])
-        assertEquals(33, counts["Festivals"])
+        assertEquals(41, counts["Attitude"])
+        assertEquals(41, counts["Hindi Shayari"])
+        assertEquals(39, counts["Love"])
+        assertEquals(39, counts["Motivation"])
+        assertEquals(37, counts["Friendship"])
+        assertEquals(35, counts["Sad"])
+        assertEquals(35, counts["Birthday"])
+        assertEquals(37, counts["Festivals"])
     }
 
     @Test
     fun testCategoryFiltering() {
         val attitude = allTemplates.filter { it.category.equals("Attitude", ignoreCase = true) }
-        assertEquals(37, attitude.size)
+        assertEquals(41, attitude.size)
 
         val shayari = allTemplates.filter { it.category.equals("Hindi Shayari", ignoreCase = true) }
-        assertEquals(37, shayari.size)
+        assertEquals(41, shayari.size)
 
         val love = allTemplates.filter { it.category.equals("Love", ignoreCase = true) }
-        assertEquals(35, love.size)
+        assertEquals(39, love.size)
 
         val motivation = allTemplates.filter { it.category.equals("Motivation", ignoreCase = true) }
-        assertEquals(35, motivation.size)
+        assertEquals(39, motivation.size)
 
         val festivals = allTemplates.filter { it.category.equals("Festivals", ignoreCase = true) }
-        assertEquals(33, festivals.size)
+        assertEquals(37, festivals.size)
     }
 
     @Test
@@ -139,7 +139,7 @@ class TemplateRepositoryTest {
         assertTrue("Should contain Hindi templates", hindiTemplates.isNotEmpty())
         assertTrue("Should contain Hinglish templates", hinglishTemplates.isNotEmpty())
         assertTrue("Should contain English templates", englishTemplates.isNotEmpty())
-        assertEquals(272, hindiTemplates.size + hinglishTemplates.size + englishTemplates.size)
+        assertEquals(304, hindiTemplates.size + hinglishTemplates.size + englishTemplates.size)
     }
 
     @Test

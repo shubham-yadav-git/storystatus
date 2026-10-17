@@ -16,16 +16,23 @@ data class StatusTemplate(
 sealed class TemplateBackground {
     data class Color(val colorValue: Long) : TemplateBackground()
     data class Gradient(val colors: List<Long>, val type: String = "linear") : TemplateBackground()
+    data class Pattern(
+        val patternType: String, // "grid", "dots", "split", "stars", "paper", "newspaper", "film", "arch", "sunburst", "aura"
+        val baseColor: Long = 0xFF121212,
+        val accentColor: Long = 0xFFFFFFFF,
+        val secondaryColor: Long = 0x00000000,
+        val scale: Float = 1f
+    ) : TemplateBackground()
     data class ImageResource(val resourceName: String) : TemplateBackground()
 }
 
 /**
  * Procedural vector decorations supported by the graphics renderer.
  * Enables luxury borders, corner brackets, frosted cards, accent dividers,
- * and typographic seals without runtime image downloads or heavy assets.
+ * polaroids, badges, barcodes, tape, and typographic seals without runtime image downloads.
  */
 data class TemplateDecoration(
-    val type: String, // "border", "corner_brackets", "card_panel", "divider", "symbol"
+    val type: String, // "border", "corner_brackets", "card_panel", "divider", "symbol", "polaroid", "badge", "barcode", "tape", "circle_rings"
     val x: Float = 0f,
     val y: Float = 0f,
     val width: Float = 0f,
@@ -37,7 +44,8 @@ data class TemplateDecoration(
     val strokeWidth: Float = 2f,
     val cornerRadius: Float = 0f,
     val style: String = "solid", // "solid", "double", "dashed"
-    val symbolType: String = "" // "quote", "sparkle", "star", "heart", "circle_badge"
+    val symbolType: String = "", // "quote", "sparkle", "star", "heart", "seal"
+    val label: String = "" // Optional badge or stamp label e.g. "OFFICIAL", "EDITION 01"
 )
 
 data class TemplateTextLayer(

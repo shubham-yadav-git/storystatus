@@ -125,8 +125,285 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                     canvas.drawColor(Color.DKGRAY)
                 }
             }
+            is TemplateBackground.Pattern -> {
+                drawPatternBackground(canvas, background, width, height)
+            }
             is TemplateBackground.ImageResource -> {
                 canvas.drawColor(Color.LTGRAY)
+            }
+        }
+    }
+
+    private fun drawPatternBackground(
+        canvas: Canvas,
+        pattern: TemplateBackground.Pattern,
+        width: Int,
+        height: Int
+    ) {
+        val baseColor = pattern.baseColor.toInt()
+        val accentColor = pattern.accentColor.toInt()
+        val secondaryColor = if (pattern.secondaryColor != 0L) pattern.secondaryColor.toInt() else accentColor
+
+        canvas.drawColor(baseColor)
+        val scale = (width / 1080f).coerceAtLeast(0.2f)
+
+        when (pattern.patternType.lowercase()) {
+            "grid" -> {
+                val gridPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    strokeWidth = 1.2f * scale
+                    alpha = (Color.alpha(accentColor) * 0.35f).toInt()
+                }
+                val step = 72f * scale
+                var x = 0f
+                while (x <= width) {
+                    canvas.drawLine(x, 0f, x, height.toFloat(), gridPaint)
+                    x += step
+                }
+                var y = 0f
+                while (y <= height) {
+                    canvas.drawLine(0f, y, width.toFloat(), y, gridPaint)
+                    y += step
+                }
+                val crossPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    strokeWidth = 2.5f * scale
+                    alpha = (Color.alpha(accentColor) * 0.7f).toInt()
+                }
+                val crossLen = 6f * scale
+                x = step
+                while (x < width) {
+                    y = step
+                    while (y < height) {
+                        canvas.drawLine(x - crossLen, y, x + crossLen, y, crossPaint)
+                        canvas.drawLine(x, y - crossLen, x, y + crossLen, crossPaint)
+                        y += step * 3
+                    }
+                    x += step * 3
+                }
+            }
+
+            "dots" -> {
+                val dotPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = accentColor
+                    alpha = (Color.alpha(accentColor) * 0.28f).toInt()
+                }
+                val step = 48f * scale
+                val radius = 2.8f * scale
+                var x = step / 2f
+                while (x <= width) {
+                    var y = step / 2f
+                    while (y <= height) {
+                        canvas.drawCircle(x, y, radius, dotPaint)
+                        y += step
+                    }
+                    x += step
+                }
+            }
+
+            "split" -> {
+                val splitPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = accentColor
+                }
+                val path = android.graphics.Path().apply {
+                    moveTo(0f, height * 0.52f)
+                    lineTo(width.toFloat(), height * 0.44f)
+                    lineTo(width.toFloat(), height.toFloat())
+                    lineTo(0f, height.toFloat())
+                    close()
+                }
+                canvas.drawPath(path, splitPaint)
+
+                val linePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = secondaryColor
+                    strokeWidth = 4f * scale
+                }
+                canvas.drawLine(0f, height * 0.52f, width.toFloat(), height * 0.44f, linePaint)
+            }
+
+            "stars" -> {
+                val nebulaPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    shader = android.graphics.RadialGradient(
+                        width * 0.5f, height * 0.35f,
+                        width * 0.7f,
+                        intArrayOf(accentColor, Color.TRANSPARENT),
+                        floatArrayOf(0f, 1f),
+                        Shader.TileMode.CLAMP
+                    )
+                }
+                canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), nebulaPaint)
+
+                val starPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = Color.WHITE
+                }
+                val random = java.util.Random(1337L)
+                for (i in 0..70) {
+                    val sx = random.nextFloat() * width
+                    val sy = random.nextFloat() * height
+                    val sRadius = (random.nextFloat() * 2.5f + 1f) * scale
+                    starPaint.alpha = random.nextInt(180) + 75
+                    canvas.drawCircle(sx, sy, sRadius, starPaint)
+                }
+                val sparklePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = Color.WHITE
+                    strokeWidth = 1.8f * scale
+                    alpha = 220
+                }
+                val sparkleCoords = listOf(
+                    Pair(width * 0.2f, height * 0.25f),
+                    Pair(width * 0.8f, height * 0.28f),
+                    Pair(width * 0.15f, height * 0.75f),
+                    Pair(width * 0.85f, height * 0.78f)
+                )
+                sparkleCoords.forEach { (cx, cy) ->
+                    val len = 12f * scale
+                    canvas.drawLine(cx - len, cy, cx + len, cy, sparklePaint)
+                    canvas.drawLine(cx, cy - len, cx, cy + len, sparklePaint)
+                }
+            }
+
+            "paper" -> {
+                val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.STROKE
+                    strokeWidth = 2f * scale
+                    color = accentColor
+                    alpha = 180
+                }
+                val inset = 36f * scale
+                canvas.drawRect(inset, inset, width - inset, height - inset, borderPaint)
+
+                val fiberPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    strokeWidth = 1f * scale
+                    alpha = 35
+                }
+                var ly = 120f * scale
+                while (ly < height - (120f * scale)) {
+                    canvas.drawLine(inset + (20f * scale), ly, width - inset - (20f * scale), ly, fiberPaint)
+                    ly += 42f * scale
+                }
+            }
+
+            "newspaper" -> {
+                val rulePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    strokeWidth = 3f * scale
+                }
+                val thinPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    strokeWidth = 1.2f * scale
+                }
+                val topMargin = 160f * scale
+                canvas.drawLine(40f * scale, topMargin, width - (40f * scale), topMargin, rulePaint)
+                canvas.drawLine(40f * scale, topMargin + (10f * scale), width - (40f * scale), topMargin + (10f * scale), thinPaint)
+
+                val datePaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = accentColor
+                    textSize = 18f * scale
+                    textAlign = Paint.Align.CENTER
+                    typeface = Typeface.create("serif", Typeface.BOLD)
+                    alpha = 180
+                }
+                canvas.drawText("SPECIAL EDITION • STORYSTATUS GAZETTE • ESTD. 2026", width / 2f, topMargin - (16f * scale), datePaint)
+
+                val bottomMargin = height - (160f * scale)
+                canvas.drawLine(40f * scale, bottomMargin - (10f * scale), width - (40f * scale), bottomMargin - (10f * scale), thinPaint)
+                canvas.drawLine(40f * scale, bottomMargin, width - (40f * scale), bottomMargin, rulePaint)
+            }
+
+            "film" -> {
+                val stripWidth = 56f * scale
+                val borderFill = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = Color.BLACK
+                }
+                canvas.drawRect(0f, 0f, stripWidth, height.toFloat(), borderFill)
+                canvas.drawRect(width - stripWidth, 0f, width.toFloat(), height.toFloat(), borderFill)
+
+                val holePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = baseColor
+                }
+                val holeW = 28f * scale
+                val holeH = 40f * scale
+                val holeRadius = 6f * scale
+                val spacing = 72f * scale
+                var hy = 40f * scale
+                while (hy < height - (40f * scale)) {
+                    val leftRect = RectF((stripWidth - holeW) / 2f, hy, (stripWidth + holeW) / 2f, hy + holeH)
+                    canvas.drawRoundRect(leftRect, holeRadius, holeRadius, holePaint)
+                    val rightX = width - stripWidth + ((stripWidth - holeW) / 2f)
+                    val rightRect = RectF(rightX, hy, rightX + holeW, hy + holeH)
+                    canvas.drawRoundRect(rightRect, holeRadius, holeRadius, holePaint)
+                    hy += spacing
+                }
+                val markPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                    color = Color.argb(160, 255, 180, 0)
+                    textSize = 14f * scale
+                    textAlign = Paint.Align.CENTER
+                    typeface = Typeface.MONOSPACE
+                }
+                canvas.drawText("▶ 24A", stripWidth / 2f, height * 0.48f, markPaint)
+                canvas.drawText("400TX", width - (stripWidth / 2f), height * 0.48f, markPaint)
+            }
+
+            "arch" -> {
+                val archLeft = 80f * scale
+                val archTop = 180f * scale
+                val archRight = width - (80f * scale)
+                val archBottom = height - (140f * scale)
+                val archRadius = (archRight - archLeft) / 2f
+
+                val archPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.FILL
+                    color = accentColor
+                }
+                val path = android.graphics.Path().apply {
+                    moveTo(archLeft, archTop + archRadius)
+                    arcTo(RectF(archLeft, archTop, archRight, archTop + (archRadius * 2f)), 180f, 180f)
+                    lineTo(archRight, archBottom)
+                    lineTo(archLeft, archBottom)
+                    close()
+                }
+                canvas.drawPath(path, archPaint)
+
+                val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    style = Paint.Style.STROKE
+                    strokeWidth = 3f * scale
+                    color = secondaryColor
+                }
+                canvas.drawPath(path, strokePaint)
+            }
+
+            "aura" -> {
+                val auraPaint1 = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    shader = android.graphics.RadialGradient(
+                        width * 0.25f, height * 0.25f,
+                        width * 0.65f,
+                        intArrayOf(accentColor, Color.TRANSPARENT),
+                        null,
+                        Shader.TileMode.CLAMP
+                    )
+                }
+                canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), auraPaint1)
+
+                val auraPaint2 = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                    shader = android.graphics.RadialGradient(
+                        width * 0.75f, height * 0.75f,
+                        width * 0.7f,
+                        intArrayOf(secondaryColor, Color.TRANSPARENT),
+                        null,
+                        Shader.TileMode.CLAMP
+                    )
+                }
+                canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), auraPaint2)
+            }
+
+            else -> {
+                canvas.drawColor(baseColor)
             }
         }
     }
@@ -209,7 +486,6 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                     val bottom = (dec.y + dec.height) * scale
                     val rect = RectF(left, top, right, bottom)
 
-                    // Fill
                     val fillPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
                         style = Paint.Style.FILL
                         color = dec.color.toInt()
@@ -217,7 +493,6 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                     val radius = dec.cornerRadius * scale
                     canvas.drawRoundRect(rect, radius, radius, fillPaint)
 
-                    // Optional stroke
                     if (dec.strokeColor != null && dec.strokeWidth > 0) {
                         val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
                             style = Paint.Style.STROKE
@@ -226,6 +501,107 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                         }
                         canvas.drawRoundRect(rect, radius, radius, strokePaint)
                     }
+                }
+
+                "polaroid" -> {
+                    val left = dec.x * scale
+                    val top = dec.y * scale
+                    val w = dec.width * scale
+                    val h = dec.height * scale
+                    val cardRect = RectF(left, top, left + w, top + h)
+
+                    val whitePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        style = Paint.Style.FILL
+                        color = Color.WHITE
+                    }
+                    canvas.drawRoundRect(cardRect, 14f * scale, 14f * scale, whitePaint)
+
+                    val photoPad = 24f * scale
+                    val photoBottomPad = 130f * scale
+                    val photoRect = RectF(left + photoPad, top + photoPad, left + w - photoPad, top + h - photoBottomPad)
+                    val innerPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        style = Paint.Style.FILL
+                        color = dec.color.toInt()
+                    }
+                    canvas.drawRoundRect(photoRect, 8f * scale, 8f * scale, innerPaint)
+
+                    // Washi tape sticker at top
+                    val tapePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        style = Paint.Style.FILL
+                        color = Color.argb(210, 245, 210, 130)
+                    }
+                    canvas.save()
+                    canvas.rotate(-4f, left + (w / 2f), top)
+                    canvas.drawRect(left + (w / 2f) - (65f * scale), top - (16f * scale), left + (w / 2f) + (65f * scale), top + (20f * scale), tapePaint)
+                    canvas.restore()
+                }
+
+                "badge" -> {
+                    val cx = dec.x * scale
+                    val cy = dec.y * scale
+                    val r = (dec.width * scale) / 2f
+                    val badgePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        style = Paint.Style.STROKE
+                        strokeWidth = dec.strokeWidth * scale
+                        color = dec.color.toInt()
+                    }
+                    canvas.drawCircle(cx, cy, r, badgePaint)
+                    val innerBadgePaint = Paint(badgePaint).apply {
+                        strokeWidth = maxOf(1f, dec.strokeWidth * 0.6f * scale)
+                        pathEffect = DashPathEffect(floatArrayOf(8f * scale, 6f * scale), 0f)
+                    }
+                    canvas.drawCircle(cx, cy, r - (10f * scale), innerBadgePaint)
+
+                    if (dec.label.isNotBlank()) {
+                        val labelPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                            color = dec.color.toInt()
+                            textSize = (dec.width * 0.16f) * scale
+                            textAlign = Paint.Align.CENTER
+                            typeface = Typeface.create("sans-serif-black", Typeface.NORMAL)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                letterSpacing = 0.12f
+                            }
+                        }
+                        canvas.drawText(dec.label.uppercase(), cx, cy + (labelPaint.textSize / 3f), labelPaint)
+                    }
+                }
+
+                "barcode" -> {
+                    val startX = dec.x * scale
+                    val startY = dec.y * scale
+                    val w = dec.width * scale
+                    val h = dec.height * scale
+                    val barPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        color = dec.color.toInt()
+                    }
+                    var curX = startX
+                    val rand = java.util.Random(99L)
+                    while (curX < startX + w) {
+                        val barW = (rand.nextInt(3) + 1) * 2f * scale
+                        canvas.drawRect(curX, startY, curX + barW, startY + h, barPaint)
+                        curX += barW + ((rand.nextInt(3) + 1) * 2f * scale)
+                    }
+                    val codePaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                        color = dec.color.toInt()
+                        textSize = 14f * scale
+                        textAlign = Paint.Align.CENTER
+                        typeface = Typeface.MONOSPACE
+                    }
+                    canvas.drawText("STORYSTATUS • 890124", startX + (w / 2f), startY + h + (18f * scale), codePaint)
+                }
+
+                "circle_rings" -> {
+                    val cx = dec.x * scale
+                    val cy = dec.y * scale
+                    val r = (dec.width * scale) / 2f
+                    val ringPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                        style = Paint.Style.STROKE
+                        strokeWidth = dec.strokeWidth * scale
+                        color = dec.color.toInt()
+                    }
+                    canvas.drawCircle(cx, cy, r, ringPaint)
+                    canvas.drawCircle(cx, cy, r * 0.68f, ringPaint.apply { alpha = 130 })
+                    canvas.drawCircle(cx, cy, r * 0.36f, ringPaint.apply { alpha = 70 })
                 }
 
                 "divider" -> {
@@ -237,7 +613,9 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                             pathEffect = DashPathEffect(floatArrayOf(10f * scale, 8f * scale), 0f)
                         }
                     }
-                    canvas.drawLine(dec.x * scale, dec.y * scale, dec.x2 * scale, dec.y2 * scale, paint)
+                    val endX = if (dec.x2 > 0) dec.x2 * scale else (dec.x + dec.width) * scale
+                    val endY = if (dec.y2 > 0) dec.y2 * scale else dec.y * scale
+                    canvas.drawLine(dec.x * scale, dec.y * scale, endX, endY, paint)
                 }
 
                 "symbol" -> {
@@ -253,6 +631,7 @@ class DefaultStatusImageRenderer(private val context: Context) : StatusImageRend
                         "sparkle" -> "✦"
                         "star" -> "★"
                         "heart" -> "♥"
+                        "seal" -> "❖"
                         else -> "✦"
                     }
 

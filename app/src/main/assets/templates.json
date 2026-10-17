@@ -62,12 +62,9 @@
     "category": "Attitude",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279959552,
-        4283039744,
-        4287299584
-      ],
-      "type": "diagonal"
+      "patternType": "grid",
+      "baseColor": 4279045396,
+      "accentColor": 4294918707
     },
     "textLayers": [
       {
@@ -106,10 +103,9 @@
     ],
     "version": 1,
     "tags": [
+      "Cyber Grid",
       "Attitude",
-      "Hindi",
-      "Status",
-      "Original"
+      "Typography"
     ],
     "decorations": []
   },
@@ -233,12 +229,10 @@
     "category": "Attitude",
     "language": "English",
     "background": {
-      "colors": [
-        4278198045,
-        4278209856,
-        4278221163
-      ],
-      "type": "diagonal"
+      "patternType": "split",
+      "baseColor": 4278190080,
+      "accentColor": 4294918707,
+      "secondaryColor": 4294967295
     },
     "textLayers": [
       {
@@ -277,10 +271,9 @@
     ],
     "version": 1,
     "tags": [
+      "Split Screen",
       "Attitude",
-      "English",
-      "Status",
-      "Original"
+      "Bold"
     ],
     "decorations": []
   },
@@ -404,12 +397,9 @@
     "category": "Hindi Shayari",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4278851863,
-        4279581492,
-        4280703310
-      ],
-      "type": "diagonal"
+      "patternType": "paper",
+      "baseColor": 4294636774,
+      "accentColor": 4284234036
     },
     "textLayers": [
       {
@@ -448,10 +438,9 @@
     ],
     "version": 1,
     "tags": [
-      "Hindi Shayari",
-      "Hindi",
-      "Status",
-      "Original"
+      "Vintage Paper",
+      "Poetic",
+      "Shayari"
     ],
     "decorations": []
   },
@@ -632,12 +621,9 @@
     "category": "Hindi Shayari",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4278522665,
-        4278920517,
-        4279451764
-      ],
-      "type": "diagonal"
+      "patternType": "newspaper",
+      "baseColor": 4294505187,
+      "accentColor": 4281345826
     },
     "textLayers": [
       {
@@ -676,10 +662,9 @@
     ],
     "version": 1,
     "tags": [
-      "Hindi Shayari",
-      "Hindi",
-      "Status",
-      "Original"
+      "Newspaper",
+      "Editorial",
+      "Shayari"
     ],
     "decorations": []
   },
@@ -746,12 +731,9 @@
     "category": "Love",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4281532443,
-        4284874803,
-        4288217165
-      ],
-      "type": "diagonal"
+      "patternType": "stars",
+      "baseColor": 4279047976,
+      "accentColor": 4294936450
     },
     "textLayers": [
       {
@@ -790,10 +772,9 @@
     ],
     "version": 1,
     "tags": [
-      "Love",
-      "Hindi",
-      "Status",
-      "Original"
+      "Celestial Stars",
+      "Romantic",
+      "Love"
     ],
     "decorations": []
   },
@@ -974,12 +955,10 @@
     "category": "Love",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279505422,
-        4281214491,
-        4283581488
-      ],
-      "type": "linear"
+      "patternType": "aura",
+      "baseColor": 4278716434,
+      "accentColor": 4294918844,
+      "secondaryColor": 4278255615
     },
     "textLayers": [
       {
@@ -1018,10 +997,9 @@
     ],
     "version": 1,
     "tags": [
-      "Love",
-      "Hindi",
-      "Status",
-      "Original"
+      "Aura Glow",
+      "Romantic",
+      "Love"
     ],
     "decorations": []
   },
@@ -1088,12 +1066,9 @@
     "category": "Motivation",
     "language": "English",
     "background": {
-      "colors": [
-        4281537536,
-        4284885248,
-        4291580416
-      ],
-      "type": "linear"
+      "patternType": "grid",
+      "baseColor": 4278190080,
+      "accentColor": 4278255615
     },
     "textLayers": [
       {
@@ -1132,10 +1107,9 @@
     ],
     "version": 1,
     "tags": [
+      "Cyber Grid",
       "Motivation",
-      "English",
-      "Status",
-      "Original"
+      "Modern"
     ],
     "decorations": []
   },
@@ -1316,12 +1290,10 @@
     "category": "Motivation",
     "language": "English",
     "background": {
-      "colors": [
-        4280029192,
-        4282195720,
-        4285542917
-      ],
-      "type": "linear"
+      "patternType": "split",
+      "baseColor": 4280558628,
+      "accentColor": 4294943793,
+      "secondaryColor": 4278190080
     },
     "textLayers": [
       {
@@ -1360,10 +1332,9 @@
     ],
     "version": 1,
     "tags": [
+      "Split Screen",
       "Motivation",
-      "English",
-      "Status",
-      "Original"
+      "Editorial"
     ],
     "decorations": []
   },
@@ -1430,12 +1401,9 @@
     "category": "Friendship",
     "language": "English",
     "background": {
-      "colors": [
-        4278849832,
-        4280034625,
-        4282011755
-      ],
-      "type": "diagonal"
+      "patternType": "film",
+      "baseColor": 4281338162,
+      "accentColor": 4294957540
     },
     "textLayers": [
       {
@@ -1474,10 +1442,8 @@
     ],
     "version": 1,
     "tags": [
-      "Friendship",
-      "English",
-      "Status",
-      "Original"
+      "Retro Film",
+      "Friendship"
     ],
     "decorations": []
   },
@@ -1658,12 +1624,9 @@
     "category": "Friendship",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4278328090,
-        4278598457,
-        4279000924
-      ],
-      "type": "diagonal"
+      "patternType": "dots",
+      "baseColor": 4294572278,
+      "accentColor": 4284824647
     },
     "textLayers": [
       {
@@ -1702,10 +1665,9 @@
     ],
     "version": 1,
     "tags": [
+      "Swiss Dots",
       "Friendship",
-      "Hindi",
-      "Status",
-      "Original"
+      "Modern"
     ],
     "decorations": []
   },
@@ -1772,12 +1734,9 @@
     "category": "Sad",
     "language": "English",
     "background": {
-      "colors": [
-        4278520596,
-        4279049002,
-        4279969339
-      ],
-      "type": "linear"
+      "patternType": "stars",
+      "baseColor": 4278717967,
+      "accentColor": 4289255423
     },
     "textLayers": [
       {
@@ -1816,10 +1775,9 @@
     ],
     "version": 1,
     "tags": [
+      "Celestial Stars",
       "Sad",
-      "English",
-      "Status",
-      "Original"
+      "Poetic"
     ],
     "decorations": []
   },
@@ -2000,12 +1958,9 @@
     "category": "Sad",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279896586,
-        4281537556,
-        4283244319
-      ],
-      "type": "diagonal"
+      "patternType": "paper",
+      "baseColor": 4294241235,
+      "accentColor": 4287258410
     },
     "textLayers": [
       {
@@ -2044,10 +1999,8 @@
     ],
     "version": 1,
     "tags": [
-      "Sad",
-      "Hindi",
-      "Status",
-      "Original"
+      "Vintage Paper",
+      "Sad"
     ],
     "decorations": []
   },
@@ -2114,12 +2067,9 @@
     "category": "Birthday",
     "language": "English",
     "background": {
-      "colors": [
-        4281206868,
-        4285138290,
-        4289430433
-      ],
-      "type": "diagonal"
+      "patternType": "stars",
+      "baseColor": 4278190080,
+      "accentColor": 4293910607
     },
     "textLayers": [
       {
@@ -2158,10 +2108,9 @@
     ],
     "version": 1,
     "tags": [
+      "Celestial Stars",
       "Birthday",
-      "English",
-      "Status",
-      "Original"
+      "Luxury Gold"
     ],
     "decorations": []
   },
@@ -2342,12 +2291,10 @@
     "category": "Birthday",
     "language": "English",
     "background": {
-      "colors": [
-        4278197038,
-        4278206310,
-        4278215828
-      ],
-      "type": "diagonal"
+      "patternType": "aura",
+      "baseColor": 4278716434,
+      "accentColor": 4294918844,
+      "secondaryColor": 4294957245
     },
     "textLayers": [
       {
@@ -2386,10 +2333,8 @@
     ],
     "version": 1,
     "tags": [
-      "Birthday",
-      "English",
-      "Status",
-      "Original"
+      "Aura Glow",
+      "Birthday"
     ],
     "decorations": []
   },
@@ -2456,12 +2401,9 @@
     "category": "Festivals",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4280224768,
-        4282522112,
-        4285410048
-      ],
-      "type": "diagonal"
+      "patternType": "stars",
+      "baseColor": 4281729324,
+      "accentColor": 4293910607
     },
     "textLayers": [
       {
@@ -2500,10 +2442,9 @@
     ],
     "version": 1,
     "tags": [
-      "Festivals",
-      "Hindi",
-      "Status",
-      "Original"
+      "Celestial Stars",
+      "Festive",
+      "Luxury Gold"
     ],
     "decorations": []
   },
@@ -2684,12 +2625,10 @@
     "category": "Festivals",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4281534720,
-        4284879872,
-        4288225280
-      ],
-      "type": "diagonal"
+      "patternType": "arch",
+      "baseColor": 4278536768,
+      "accentColor": 4279047976,
+      "secondaryColor": 4293910607
     },
     "textLayers": [
       {
@@ -2728,10 +2667,9 @@
     ],
     "version": 1,
     "tags": [
-      "Festivals",
-      "Hindi",
-      "Status",
-      "Original"
+      "Aesthetic Arch",
+      "Festive",
+      "Luxury Gold"
     ],
     "decorations": []
   },
@@ -4186,11 +4124,9 @@
     "category": "Attitude",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4278848010,
-        4279505940
-      ],
-      "type": "linear"
+      "patternType": "dots",
+      "baseColor": 4279308561,
+      "accentColor": 4294943793
     },
     "textLayers": [
       {
@@ -4240,10 +4176,9 @@
       }
     ],
     "tags": [
+      "Swiss Dots",
       "Attitude",
-      "Luxury Gold",
-      "Minimal",
-      "Hindi"
+      "Modern"
     ],
     "decorations": [
       {
@@ -4515,11 +4450,9 @@
     "category": "Attitude",
     "language": "English",
     "background": {
-      "colors": [
-        4279308566,
-        4280229678
-      ],
-      "type": "linear"
+      "patternType": "film",
+      "baseColor": 4280295462,
+      "accentColor": 4294967295
     },
     "textLayers": [
       {
@@ -4569,10 +4502,9 @@
       }
     ],
     "tags": [
+      "Retro Film",
       "Attitude",
-      "Minimal",
-      "Typography",
-      "English"
+      "Vintage"
     ],
     "decorations": [
       {
@@ -5366,11 +5298,9 @@
     "category": "Hindi Shayari",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279377435,
-        4280169262
-      ],
-      "type": "linear"
+      "patternType": "stars",
+      "baseColor": 4278719266,
+      "accentColor": 4282338692
     },
     "textLayers": [
       {
@@ -5420,10 +5350,9 @@
       }
     ],
     "tags": [
-      "Hindi Shayari",
-      "Editorial",
-      "Minimal",
-      "Hindi"
+      "Celestial Stars",
+      "Poetic",
+      "Shayari"
     ],
     "decorations": [
       {
@@ -5677,12 +5606,10 @@
     "category": "Hindi Shayari",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279896618,
-        4281800532,
-        4284162446
-      ],
-      "type": "diagonal"
+      "patternType": "arch",
+      "baseColor": 4281803548,
+      "accentColor": 4294636774,
+      "secondaryColor": 4292981323
     },
     "textLayers": [
       {
@@ -5732,9 +5659,9 @@
       }
     ],
     "tags": [
-      "Hindi Shayari",
-      "Poetic",
-      "Hindi"
+      "Aesthetic Arch",
+      "Shayari",
+      "Luxury Gold"
     ],
     "decorations": [
       {
@@ -6681,11 +6608,9 @@
     "category": "Love",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4281010714,
-        4283699764
-      ],
-      "type": "diagonal"
+      "patternType": "film",
+      "baseColor": 4280424230,
+      "accentColor": 4294943920
     },
     "textLayers": [
       {
@@ -6735,9 +6660,9 @@
       }
     ],
     "tags": [
-      "Love",
+      "Retro Film",
       "Romantic",
-      "Hindi"
+      "Love"
     ],
     "decorations": [
       {
@@ -6987,11 +6912,9 @@
     "category": "Love",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4280551966,
-        4283241536
-      ],
-      "type": "diagonal"
+      "patternType": "dots",
+      "baseColor": 4294572278,
+      "accentColor": 4287841362
     },
     "textLayers": [
       {
@@ -7041,9 +6964,9 @@
       }
     ],
     "tags": [
-      "Love",
-      "Romantic",
-      "Hindi"
+      "Swiss Dots",
+      "Minimal",
+      "Love"
     ],
     "decorations": [
       {
@@ -7833,12 +7756,9 @@
     "category": "Motivation",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279895296,
-        4283043840,
-        4288225792
-      ],
-      "type": "diagonal"
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281867041
     },
     "textLayers": [
       {
@@ -7888,9 +7808,9 @@
       }
     ],
     "tags": [
+      "Newspaper",
       "Motivation",
-      "Bold",
-      "Hindi"
+      "Editorial"
     ],
     "decorations": [
       {
@@ -8137,11 +8057,10 @@
     "category": "Motivation",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279372831,
-        4280686914
-      ],
-      "type": "diagonal"
+      "patternType": "arch",
+      "baseColor": 4279047976,
+      "accentColor": 4280295462,
+      "secondaryColor": 4293910607
     },
     "textLayers": [
       {
@@ -8191,9 +8110,9 @@
       }
     ],
     "tags": [
+      "Aesthetic Arch",
       "Motivation",
-      "Card Frame",
-      "Hindi"
+      "Luxury Gold"
     ],
     "decorations": [
       {
@@ -9130,11 +9049,9 @@
     "category": "Friendship",
     "language": "Hindi",
     "background": {
-      "colors": [
-        4279636006,
-        4281016138
-      ],
-      "type": "linear"
+      "patternType": "newspaper",
+      "baseColor": 4294505187,
+      "accentColor": 4281345826
     },
     "textLayers": [
       {
@@ -9184,9 +9101,8 @@
       }
     ],
     "tags": [
-      "Friendship",
-      "Card Frame",
-      "Hindi"
+      "Newspaper",
+      "Friendship"
     ],
     "decorations": [
       {
@@ -17814,6 +17730,1840 @@
         "x": 540.0,
         "y": 990.0,
         "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "att_38",
+    "title": "Retro Film Roll 35mm",
+    "category": "Attitude",
+    "language": "English",
+    "tags": [
+      "Retro Film",
+      "Attitude",
+      "Street"
+    ],
+    "description": "Authentic 35mm film roll with black sprockets, frame numbers, and street attitude statement",
+    "background": {
+      "patternType": "film",
+      "baseColor": 4279834905,
+      "accentColor": 4294967295
+    },
+    "decorations": [
+      {
+        "type": "barcode",
+        "x": 160,
+        "y": 1400,
+        "width": 400,
+        "height": 60,
+        "color": 4294967295
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "NO RETAKES",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 68.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 800.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.12
+      },
+      {
+        "id": "t2",
+        "text": "Life is raw footage. I don't live to please your audience.",
+        "fontFamily": "sans-serif-bold",
+        "fontSize": 38.0,
+        "color": 4294943793,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 960.0,
+        "maxWidth": 780.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "att_39",
+    "title": "Cyber Terminal Blueprint",
+    "category": "Attitude",
+    "language": "Hinglish",
+    "tags": [
+      "Cyber Grid",
+      "Attitude",
+      "Modern"
+    ],
+    "description": "Architectural cyber blueprint grid with vertex crosses and bold Hinglish confidence",
+    "background": {
+      "patternType": "grid",
+      "baseColor": 4278520352,
+      "accentColor": 4278255615
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 660,
+        "width": 140,
+        "height": 140,
+        "color": 4278255615,
+        "strokeWidth": 3,
+        "label": "ALPHA"
+      },
+      {
+        "type": "barcode",
+        "x": 340,
+        "y": 1380,
+        "width": 400,
+        "height": 60,
+        "color": 4278255615
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "SYSTEM OVERRIDE",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4278255615,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "Rules unke liye hote hain jo follow karte hain, hum toh trend banate hain.",
+        "fontFamily": "sans-serif-bold",
+        "fontSize": 40.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 820.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "att_40",
+    "title": "The Daily Rebel Gazette",
+    "category": "Attitude",
+    "language": "Hindi",
+    "tags": [
+      "Newspaper",
+      "Editorial",
+      "Attitude"
+    ],
+    "description": "Newspaper front-page masthead with double rule lines and fearless Hindi statement",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "SPECIAL"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "ख़बरदार!",
+        "fontFamily": "serif-bold",
+        "fontSize": 72.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 800.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "हमारे अंदाज़ की नक़ल तो कर लोगे,",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 940.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t3",
+        "text": "मगर यह रुतबा कहाँ से लाओगे?",
+        "fontFamily": "serif-bold",
+        "fontSize": 48.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1060.0,
+        "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "att_41",
+    "title": "Dual-Tone Contrast Split",
+    "category": "Attitude",
+    "language": "Hinglish",
+    "tags": [
+      "Split Screen",
+      "Attitude",
+      "Minimal"
+    ],
+    "description": "Black and electric gold split-screen with intersecting bold typography",
+    "background": {
+      "patternType": "split",
+      "baseColor": 4278190080,
+      "accentColor": 4294943793,
+      "secondaryColor": 4294967295
+    },
+    "decorations": [
+      {
+        "type": "corner_brackets",
+        "x": 60,
+        "y": 60,
+        "width": 80,
+        "height": 80,
+        "color": 4294967295,
+        "strokeWidth": 4
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "STAND BACK",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 76.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 740.0,
+        "maxWidth": 900.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "Humse muqabla karna hai toh pehle apna level up karo.",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 42.0,
+        "color": 4278190080,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1100.0,
+        "maxWidth": 840.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "shayari_38",
+    "title": "The Poetic Gazette 1857",
+    "category": "Hindi Shayari",
+    "language": "Hindi",
+    "tags": [
+      "Newspaper",
+      "Vintage",
+      "Shayari"
+    ],
+    "description": "Vintage newspaper editorial masthead with classic Mirza Ghalib masterpiece",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294505187,
+      "accentColor": 4281867041
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 640,
+        "width": 64,
+        "height": 64,
+        "color": 4287639587,
+        "symbolType": "quote"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "इश्क़ पर ज़ोर नहीं है ये वो आतिश 'ग़ालिब',",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4281867041,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "कि लगाए न लगे और बुझाए न बने।",
+        "fontFamily": "serif-bold",
+        "fontSize": 46.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t3",
+        "text": "— मिर्ज़ा ग़ालिब • दीवान-ए-ग़ालिब",
+        "fontFamily": "serif",
+        "fontSize": 32.0,
+        "color": 4286145620,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1130.0,
+        "maxWidth": 640.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "shayari_39",
+    "title": "Celestial Stardust Nazm",
+    "category": "Hindi Shayari",
+    "language": "Hindi",
+    "tags": [
+      "Celestial Stars",
+      "Poetic",
+      "Shayari"
+    ],
+    "description": "Deep cosmos starry night sky with sparkling stars and Rahat Indori verse",
+    "background": {
+      "patternType": "stars",
+      "baseColor": 4279047976,
+      "accentColor": 4283182888
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 54,
+        "height": 54,
+        "color": 4293910607,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "सभी का ख़ून है शामिल यहाँ की मिट्टी में,",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "किसी के बाप का हिन्दुस्तान थोड़ी है!",
+        "fontFamily": "serif-bold",
+        "fontSize": 48.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 880.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "shayari_40",
+    "title": "Royal Heritage Arch",
+    "category": "Hindi Shayari",
+    "language": "Hindi",
+    "tags": [
+      "Aesthetic Arch",
+      "Luxury Gold",
+      "Shayari"
+    ],
+    "description": "Architectural Indian palace arch framed in gold with soulful couplet",
+    "background": {
+      "patternType": "arch",
+      "baseColor": 4279834905,
+      "accentColor": 4281803548,
+      "secondaryColor": 4293910607
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 680,
+        "width": 52,
+        "height": 52,
+        "color": 4293910607,
+        "symbolType": "seal"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "हम भी दरिया हैं हमें अपना हुनर मालूम है,",
+        "fontFamily": "serif-bold",
+        "fontSize": 42.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t2",
+        "text": "जिस तरफ़ भी चल पड़ेंगे रास्ता हो जाएगा।",
+        "fontFamily": "serif-bold",
+        "fontSize": 46.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "shayari_41",
+    "title": "Handmade Parchment Sher",
+    "category": "Hindi Shayari",
+    "language": "Hindi",
+    "tags": [
+      "Vintage Paper",
+      "Poetic"
+    ],
+    "description": "Organic deckle paper with horizontal aged fibers and wax stamp",
+    "background": {
+      "patternType": "paper",
+      "baseColor": 4294636774,
+      "accentColor": 4287258410
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 650,
+        "width": 120,
+        "height": 120,
+        "color": 4287258410,
+        "strokeWidth": 2,
+        "label": "SHAYARI"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "ख़ुदी को कर बुलंद इतना कि हर तक़दीर से पहले,",
+        "fontFamily": "serif-bold",
+        "fontSize": 42.0,
+        "color": 4281867041,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "ख़ुदा बंदे से ख़ुद पूछे बता तेरी रज़ा क्या है।",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4287258410,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 880.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "love_36",
+    "title": "Polaroid Love Snapshot",
+    "category": "Love",
+    "language": "English",
+    "tags": [
+      "Polaroid",
+      "Romantic",
+      "Love"
+    ],
+    "description": "Realistic polaroid photo card with washi tape and romantic handwriting quote",
+    "background": {
+      "patternType": "dots",
+      "baseColor": 4294572278,
+      "accentColor": 4287841362
+    },
+    "decorations": [
+      {
+        "type": "polaroid",
+        "x": 140,
+        "y": 580,
+        "width": 800,
+        "height": 760,
+        "color": 4281338162
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "YOU ARE MY FAVORITE",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 52.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 720.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "And my forever home.",
+        "fontFamily": "serif-bold",
+        "fontSize": 42.0,
+        "color": 4294936450,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 960.0,
+        "maxWidth": 700.0
+      },
+      {
+        "id": "t3",
+        "text": "date: forever & always ♡",
+        "fontFamily": "casual",
+        "fontSize": 34.0,
+        "color": 4284824647,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1260.0,
+        "maxWidth": 680.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "love_37",
+    "title": "Starry Night Love Letter",
+    "category": "Love",
+    "language": "Hindi",
+    "tags": [
+      "Celestial Stars",
+      "Romantic",
+      "Love"
+    ],
+    "description": "Starry cosmic night sky with glowing hearts and deep emotional Hindi romance",
+    "background": {
+      "patternType": "stars",
+      "baseColor": 4279047976,
+      "accentColor": 4294936450
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 54,
+        "height": 54,
+        "color": 4294936450,
+        "symbolType": "heart"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "लाखों सितारों में जैसे चाँद एक है,",
+        "fontFamily": "serif",
+        "fontSize": 46.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "इस भरी दुनिया में मेरा तू ही एक है।",
+        "fontFamily": "serif-bold",
+        "fontSize": 48.0,
+        "color": 4294936450,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 880.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "love_38",
+    "title": "Moroccan Arch Romance",
+    "category": "Love",
+    "language": "Hindi",
+    "tags": [
+      "Aesthetic Arch",
+      "Romantic",
+      "Luxury Gold"
+    ],
+    "description": "Midnight sapphire arch framed in rose gold with pure heartfelt love",
+    "background": {
+      "patternType": "arch",
+      "baseColor": 4278719266,
+      "accentColor": 4280424230,
+      "secondaryColor": 4294943920
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 48,
+        "height": 48,
+        "color": 4294943920,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "तेरा मिलना किसी दुआ का क़ुबूल होना है,",
+        "fontFamily": "serif-bold",
+        "fontSize": 42.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t2",
+        "text": "अब हर लम्हा तेरे नाम से शुरू होता है।",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4294943920,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "love_39",
+    "title": "35mm Couple Memories",
+    "category": "Love",
+    "language": "Hinglish",
+    "tags": [
+      "Retro Film",
+      "Romantic",
+      "Love"
+    ],
+    "description": "35mm camera film strip with sprocket holes and candid relationship thought",
+    "background": {
+      "patternType": "film",
+      "baseColor": 4280295462,
+      "accentColor": 4294943920
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 50,
+        "height": 50,
+        "color": 4294943920,
+        "symbolType": "heart"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "EVERY FRAME WITH YOU",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "Zindagi ki sabse khoobsurat tasveer ban jata hai.",
+        "fontFamily": "serif",
+        "fontSize": 40.0,
+        "color": 4294943920,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 980.0,
+        "maxWidth": 800.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "mot_36",
+    "title": "Architectural Grid Blueprint",
+    "category": "Motivation",
+    "language": "English",
+    "tags": [
+      "Cyber Grid",
+      "Motivation",
+      "Modern"
+    ],
+    "description": "High-tech blueprint grid with corner crosshairs and discipline manifesto",
+    "background": {
+      "patternType": "grid",
+      "baseColor": 4278190080,
+      "accentColor": 4278255615
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 650,
+        "width": 140,
+        "height": 140,
+        "color": 4278255615,
+        "strokeWidth": 3,
+        "label": "ELITE"
+      },
+      {
+        "type": "barcode",
+        "x": 340,
+        "y": 1380,
+        "width": 400,
+        "height": 60,
+        "color": 4278255615
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "DISCIPLINE > MOTIVATION",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4278255615,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 900.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "Do what needs to be done, even when you don't feel like it.",
+        "fontFamily": "sans-serif-bold",
+        "fontSize": 38.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 820.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "mot_37",
+    "title": "The Daily Success Gazette",
+    "category": "Motivation",
+    "language": "Hindi",
+    "tags": [
+      "Newspaper",
+      "Editorial",
+      "Motivation"
+    ],
+    "description": "Front-page newspaper editorial styling with hard-hitting Hindi perseverance",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "VICTORY"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "इतिहास वही रचते हैं,",
+        "fontFamily": "serif-bold",
+        "fontSize": 50.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "जिनके हौसलों में तूफ़ान से लड़ने का दम होता है।",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 970.0,
+        "maxWidth": 860.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "mot_38",
+    "title": "Split Energy Headline",
+    "category": "Motivation",
+    "language": "Hinglish",
+    "tags": [
+      "Split Screen",
+      "Motivation",
+      "Modern"
+    ],
+    "description": "Black and electric amber split-screen with sharp divide",
+    "background": {
+      "patternType": "split",
+      "baseColor": 4278190080,
+      "accentColor": 4294943793,
+      "secondaryColor": 4294967295
+    },
+    "decorations": [
+      {
+        "type": "corner_brackets",
+        "x": 60,
+        "y": 60,
+        "width": 80,
+        "height": 80,
+        "color": 4294967295,
+        "strokeWidth": 4
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "GAME ON",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 82.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 740.0,
+        "maxWidth": 900.0,
+        "letterSpacing": 0.12
+      },
+      {
+        "id": "t2",
+        "text": "Jeet unki nahi hoti jo kabhi girte nahi, balki unki hoti hai jo gir kar phir khade hote hain.",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 38.0,
+        "color": 4278190080,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1100.0,
+        "maxWidth": 840.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "mot_39",
+    "title": "Swiss Dot Matrix Hustle",
+    "category": "Motivation",
+    "language": "English",
+    "tags": [
+      "Swiss Dots",
+      "Minimal",
+      "Motivation"
+    ],
+    "description": "Swiss dot array with high-contrast monochrome typographic balance",
+    "background": {
+      "patternType": "dots",
+      "baseColor": 4279308561,
+      "accentColor": 4294967295
+    },
+    "decorations": [
+      {
+        "type": "divider",
+        "x": 420,
+        "y": 900,
+        "width": 240,
+        "height": 4,
+        "color": 4294943793,
+        "strokeWidth": 4
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "DO NOT QUIT",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 72.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 800.0,
+        "maxWidth": 900.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "Suffer now and live the rest of your life as a champion.",
+        "fontFamily": "sans-serif-medium",
+        "fontSize": 38.0,
+        "color": 4294943793,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 820.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "friend_34",
+    "title": "Polaroid Squad Memories",
+    "category": "Friendship",
+    "language": "Hinglish",
+    "tags": [
+      "Polaroid",
+      "Friendship",
+      "Modern"
+    ],
+    "description": "Polaroid photo card with washi tape and nostalgic friend-group quote",
+    "background": {
+      "patternType": "dots",
+      "baseColor": 4294572278,
+      "accentColor": 4284824647
+    },
+    "decorations": [
+      {
+        "type": "polaroid",
+        "x": 140,
+        "y": 580,
+        "width": 800,
+        "height": 760,
+        "color": 4279051564
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "YAARON KI TOLI",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 720.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "Bina kisi matlab ke sath nibhane wale.",
+        "fontFamily": "serif-bold",
+        "fontSize": 38.0,
+        "color": 4278255615,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 960.0,
+        "maxWidth": 700.0
+      },
+      {
+        "id": "t3",
+        "text": "best days of our lives ★",
+        "fontFamily": "casual",
+        "fontSize": 34.0,
+        "color": 4284824647,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1260.0,
+        "maxWidth": 680.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "friend_35",
+    "title": "35mm Road Trip Roll",
+    "category": "Friendship",
+    "language": "English",
+    "tags": [
+      "Retro Film",
+      "Friendship"
+    ],
+    "description": "Film roll frame with Kodak gold marks and friend road-trip vibe",
+    "background": {
+      "patternType": "film",
+      "baseColor": 4280295462,
+      "accentColor": 4294957540
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 50,
+        "height": 50,
+        "color": 4294957540,
+        "symbolType": "star"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "GOOD TIMES & CRAZY FRIENDS",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 54.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "Make the most unforgettable memories.",
+        "fontFamily": "serif",
+        "fontSize": 40.0,
+        "color": 4294957540,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 980.0,
+        "maxWidth": 800.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "friend_36",
+    "title": "The Gazette Friendship Issue",
+    "category": "Friendship",
+    "language": "Hindi",
+    "tags": [
+      "Newspaper",
+      "Friendship"
+    ],
+    "description": "Newspaper front-page masthead celebrating lifelong friendship",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294505187,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "BFF"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "सच्ची दोस्ती अनमोल है,",
+        "fontFamily": "serif-bold",
+        "fontSize": 48.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "जो हर मुश्किल में मुस्कुराने की वजह बन जाए।",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4288046894,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "friend_37",
+    "title": "Split Bond Yaari",
+    "category": "Friendship",
+    "language": "Hinglish",
+    "tags": [
+      "Split Screen",
+      "Friendship"
+    ],
+    "description": "Two-tone split screen in navy and gold with proud friendship statement",
+    "background": {
+      "patternType": "split",
+      "baseColor": 4279047976,
+      "accentColor": 4294943793,
+      "secondaryColor": 4294967295
+    },
+    "decorations": [
+      {
+        "type": "corner_brackets",
+        "x": 60,
+        "y": 60,
+        "width": 80,
+        "height": 80,
+        "color": 4294967295,
+        "strokeWidth": 4
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "BROTHERHOOD",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 68.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 740.0,
+        "maxWidth": 900.0,
+        "letterSpacing": 0.12
+      },
+      {
+        "id": "t2",
+        "text": "Dost kam hain magar jo hain sab lajawab hain!",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 42.0,
+        "color": 4278190080,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1100.0,
+        "maxWidth": 840.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "sad_32",
+    "title": "Midnight Cosmic Solitude",
+    "category": "Sad",
+    "language": "Hindi",
+    "tags": [
+      "Celestial Stars",
+      "Sad",
+      "Poetic"
+    ],
+    "description": "Deep starfield sky with lonely glowing star and emotional Hindi contemplation",
+    "background": {
+      "patternType": "stars",
+      "baseColor": 4278717967,
+      "accentColor": 4289255423
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 54,
+        "height": 54,
+        "color": 4289255423,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "तन्हाई में मुस्कुराना सीख लिया हमने,",
+        "fontFamily": "serif-bold",
+        "fontSize": 44.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "ताकि किसी को हमारी तकलीफ़ का अंदाज़ा ना हो।",
+        "fontFamily": "serif",
+        "fontSize": 42.0,
+        "color": 4289255423,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 880.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "sad_33",
+    "title": "Aged Parchment Tears",
+    "category": "Sad",
+    "language": "Hindi",
+    "tags": [
+      "Vintage Paper",
+      "Sad",
+      "Poetic"
+    ],
+    "description": "Organic parchment paper with inner margin and poignant emotional verse",
+    "background": {
+      "patternType": "paper",
+      "baseColor": 4294241235,
+      "accentColor": 4287258410
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 54,
+        "height": 54,
+        "color": 4287258410,
+        "symbolType": "quote"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "कुछ ज़ख़्म ऐसे होते हैं,",
+        "fontFamily": "serif-bold",
+        "fontSize": 46.0,
+        "color": 4281867041,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 860.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t2",
+        "text": "जो ना दिखते हैं ना भरते हैं।",
+        "fontFamily": "serif-bold",
+        "fontSize": 48.0,
+        "color": 4287258410,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 860.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "sad_34",
+    "title": "35mm Faded Film Memory",
+    "category": "Sad",
+    "language": "English",
+    "tags": [
+      "Retro Film",
+      "Sad"
+    ],
+    "description": "35mm negative film frame with melancholic reflection on lost time",
+    "background": {
+      "patternType": "film",
+      "baseColor": 4279834905,
+      "accentColor": 4289255423
+    },
+    "decorations": [
+      {
+        "type": "divider",
+        "x": 420,
+        "y": 910,
+        "width": 240,
+        "height": 2,
+        "color": 4289255423,
+        "strokeWidth": 2
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "FADING MEMORIES",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 60.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "We slowly become strangers with all the same memories.",
+        "fontFamily": "serif",
+        "fontSize": 38.0,
+        "color": 4289255423,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1000.0,
+        "maxWidth": 800.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "sad_35",
+    "title": "The Gazette Obituary to Love",
+    "category": "Sad",
+    "language": "Hinglish",
+    "tags": [
+      "Newspaper",
+      "Sad"
+    ],
+    "description": "Gazette newspaper column with touching Hinglish farewell",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "MEMORIES"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "Alvida Keh Diya Unhone,",
+        "fontFamily": "serif-bold",
+        "fontSize": 46.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 840.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "Aur hum muskura kar unki khushi ke liye chup ho gaye.",
+        "fontFamily": "serif",
+        "fontSize": 40.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 860.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "bday_32",
+    "title": "Polaroid Birthday Wish",
+    "category": "Birthday",
+    "language": "English",
+    "tags": [
+      "Polaroid",
+      "Birthday"
+    ],
+    "description": "Polaroid card with washi tape, editable name and age for charming celebration",
+    "background": {
+      "patternType": "dots",
+      "baseColor": 4294572278,
+      "accentColor": 4294918707
+    },
+    "decorations": [
+      {
+        "type": "polaroid",
+        "x": 140,
+        "y": 580,
+        "width": 800,
+        "height": 760,
+        "color": 4279047976
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "HAPPY BIRTHDAY",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 720.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "{{name}}",
+        "fontFamily": "serif-bold",
+        "fontSize": 64.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 950.0,
+        "maxWidth": 700.0
+      },
+      {
+        "id": "t3",
+        "text": "celebrating {{age}} magical years! ✨",
+        "fontFamily": "casual",
+        "fontSize": 34.0,
+        "color": 4284824647,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1260.0,
+        "maxWidth": 680.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "bday_33",
+    "title": "Celestial Starry Birthday",
+    "category": "Birthday",
+    "language": "Hindi",
+    "tags": [
+      "Celestial Stars",
+      "Birthday",
+      "Luxury Gold"
+    ],
+    "description": "Cosmic starry night with gold sparkles and customizable birthday blessing",
+    "background": {
+      "patternType": "stars",
+      "baseColor": 4278190080,
+      "accentColor": 4293910607
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 56,
+        "height": 56,
+        "color": 4293910607,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "जन्मदिन की बधाई",
+        "fontFamily": "serif-bold",
+        "fontSize": 64.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "{{name}}",
+        "fontFamily": "serif-bold",
+        "fontSize": 72.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 970.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t3",
+        "text": "सितारों की तरह सदा चमकते रहो!",
+        "fontFamily": "serif",
+        "fontSize": 40.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1110.0,
+        "maxWidth": 820.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "bday_34",
+    "title": "The Birthday Gazette",
+    "category": "Birthday",
+    "language": "English",
+    "tags": [
+      "Newspaper",
+      "Birthday"
+    ],
+    "description": "Front-page newspaper headline breaking news birthday edition",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "VIP DAY"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "EXTRA! EXTRA!",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 62.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 800.0,
+        "maxWidth": 880.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "{{name}} TURNS {{age}}!",
+        "fontFamily": "serif-bold",
+        "fontSize": 68.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 960.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t3",
+        "text": "Wishing our favorite person the most extraordinary year ahead.",
+        "fontFamily": "serif",
+        "fontSize": 36.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1110.0,
+        "maxWidth": 820.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "bday_35",
+    "title": "Royal Palace Arch Birthday",
+    "category": "Birthday",
+    "language": "Hinglish",
+    "tags": [
+      "Aesthetic Arch",
+      "Birthday",
+      "Luxury Gold"
+    ],
+    "description": "Regal architectural arch with gold borders and royal birthday wish",
+    "background": {
+      "patternType": "arch",
+      "baseColor": 4279047976,
+      "accentColor": 4279834905,
+      "secondaryColor": 4293910607
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 52,
+        "height": 52,
+        "color": 4293910607,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "ROYAL BIRTHDAY WISHES",
+        "fontFamily": "sans-serif-bold",
+        "fontSize": 48.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 880.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "{{name}}",
+        "fontFamily": "serif-bold",
+        "fontSize": 72.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 970.0,
+        "maxWidth": 860.0
+      },
+      {
+        "id": "t3",
+        "text": "May your special day be fit for royalty!",
+        "fontFamily": "serif",
+        "fontSize": 38.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 1110.0,
+        "maxWidth": 820.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "fest_34",
+    "title": "Diwali Golden Diya Arch",
+    "category": "Festivals",
+    "language": "Hindi",
+    "tags": [
+      "Aesthetic Arch",
+      "Festive",
+      "Luxury Gold"
+    ],
+    "description": "Temple arch framed in gold with ceremonial diya and auspicious Deepavali blessing",
+    "background": {
+      "patternType": "arch",
+      "baseColor": 4281729324,
+      "accentColor": 4279834905,
+      "secondaryColor": 4293910607
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 64,
+        "height": 64,
+        "color": 4293910607,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "दीपावली महापर्व",
+        "fontFamily": "serif-bold",
+        "fontSize": 72.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 830.0,
+        "maxWidth": 880.0
+      },
+      {
+        "id": "t2",
+        "text": "लक्ष्मी-गणेश की कृपा से घर-आँगन में सुख और समृद्धि बरसे।",
+        "fontFamily": "serif",
+        "fontSize": 42.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 860.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "fest_35",
+    "title": "Eid Crescent Night Sky",
+    "category": "Festivals",
+    "language": "Hindi",
+    "tags": [
+      "Celestial Stars",
+      "Festive",
+      "Luxury Gold"
+    ],
+    "description": "Midnight teal starfield with sparkling stars and Eid Mubarak greeting",
+    "background": {
+      "patternType": "stars",
+      "baseColor": 4278536768,
+      "accentColor": 4293910607
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 56,
+        "height": 56,
+        "color": 4293910607,
+        "symbolType": "star"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "ईद मुबारक",
+        "fontFamily": "serif-bold",
+        "fontSize": 78.0,
+        "color": 4293910607,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 830.0,
+        "maxWidth": 900.0
+      },
+      {
+        "id": "t2",
+        "text": "अल्लाह आपके जीवन को खुशियों और बरकतों से भर दे।",
+        "fontFamily": "serif",
+        "fontSize": 42.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 990.0,
+        "maxWidth": 860.0,
+        "lineSpacingMultiplier": 1.3
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "fest_36",
+    "title": "35mm Holi Colour Burst",
+    "category": "Festivals",
+    "language": "Hinglish",
+    "tags": [
+      "Retro Film",
+      "Festive",
+      "Modern"
+    ],
+    "description": "35mm camera film roll framing cheerful festive Holi celebration",
+    "background": {
+      "patternType": "film",
+      "baseColor": 4283182888,
+      "accentColor": 4294957245
+    },
+    "decorations": [
+      {
+        "type": "symbol",
+        "x": 540,
+        "y": 660,
+        "width": 54,
+        "height": 54,
+        "color": 4294957245,
+        "symbolType": "sparkle"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "HAPPY HOLI TO ALL",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 58.0,
+        "color": 4294967295,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 820.0,
+        "maxWidth": 860.0,
+        "letterSpacing": 0.08
+      },
+      {
+        "id": "t2",
+        "text": "Rango ki tarah khoobsoorat ho aapki zindagi!",
+        "fontFamily": "serif",
+        "fontSize": 42.0,
+        "color": 4294957245,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 980.0,
+        "maxWidth": 800.0
+      }
+    ],
+    "version": 1
+  },
+  {
+    "id": "fest_37",
+    "title": "The Festival Gazette Special",
+    "category": "Festivals",
+    "language": "English",
+    "tags": [
+      "Newspaper",
+      "Festive"
+    ],
+    "description": "Newspaper front-page festival edition with celebratory typography",
+    "background": {
+      "patternType": "newspaper",
+      "baseColor": 4294636774,
+      "accentColor": 4281345826
+    },
+    "decorations": [
+      {
+        "type": "badge",
+        "x": 540,
+        "y": 640,
+        "width": 130,
+        "height": 130,
+        "color": 4281345826,
+        "strokeWidth": 3,
+        "label": "FESTIVE"
+      }
+    ],
+    "textLayers": [
+      {
+        "id": "t1",
+        "text": "SEASON'S GREETINGS",
+        "fontFamily": "sans-serif-black",
+        "fontSize": 56.0,
+        "color": 4281345826,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 800.0,
+        "maxWidth": 880.0,
+        "letterSpacing": 0.1
+      },
+      {
+        "id": "t2",
+        "text": "Wishing you peace, prosperity, and joyous celebrations with family and friends.",
+        "fontFamily": "serif",
+        "fontSize": 38.0,
+        "color": 4287639587,
+        "alignment": "center",
+        "x": 540.0,
+        "y": 960.0,
+        "maxWidth": 840.0,
+        "lineSpacingMultiplier": 1.3
       }
     ],
     "version": 1

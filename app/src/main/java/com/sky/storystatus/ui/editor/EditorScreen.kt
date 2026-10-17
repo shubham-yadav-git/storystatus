@@ -825,6 +825,17 @@ private fun BackgroundTool(
     onBackgroundSelected: (TemplateBackground) -> Unit
 ) {
     val presets = listOf(
+        // Modern Procedural Patterns
+        TemplateBackground.Pattern("stars", 0xFF080B1CL, 0xFF4A69BDL) to "Stars",
+        TemplateBackground.Pattern("film", 0xFF0D0D11L, 0xFFFFFFFFL) to "35mm Film",
+        TemplateBackground.Pattern("newspaper", 0xFFFDF8E8L, 0xFF1A1A1AL) to "Gazette",
+        TemplateBackground.Pattern("grid", 0xFF080B12L, 0xFFFF0055L) to "Grid",
+        TemplateBackground.Pattern("dots", 0xFF0C1021L, 0xFFFFAA00L) to "Dots",
+        TemplateBackground.Pattern("arch", 0xFF110D20L, 0xFFF8F1E6L, 0xFFD4AF37L) to "Arch",
+        TemplateBackground.Pattern("split", 0xFF000000L, 0xFFFF0055L, 0xFFFFFFFFL) to "Split",
+        TemplateBackground.Pattern("paper", 0xFFFDF8E8L, 0xFF4A3525L) to "Paper",
+        TemplateBackground.Pattern("aura", 0xFF080612L, 0xFFFF0066L, 0xFF00E5FFL) to "Aura",
+        // Gradients
         TemplateBackground.Gradient(listOf(0xFF0D0D11, 0xFF1A1A2E, 0xFF16213E), "diagonal") to "Obsidian",
         TemplateBackground.Gradient(listOf(0xFF1B0000, 0xFF4A0000, 0xFF8B0000), "diagonal") to "Crimson",
         TemplateBackground.Gradient(listOf(0xFF001F1D, 0xFF004D40, 0xFF00796B), "diagonal") to "Teal",
@@ -835,6 +846,7 @@ private fun BackgroundTool(
         TemplateBackground.Gradient(listOf(0xFF280518, 0xFF5C0E35, 0xFF9C1A5B), "diagonal") to "Ruby",
         TemplateBackground.Gradient(listOf(0xFF051026, 0xFF0D2554, 0xFF1B498C), "diagonal") to "Navy",
         TemplateBackground.Gradient(listOf(0xFF331400, 0xFF662900, 0xFFCC5200), "linear") to "Sunrise",
+        // Solid Colors
         TemplateBackground.Color(0xFF0A0A0A) to "Noir",
         TemplateBackground.Color(0xFFFCF8F4) to "Cream"
     )
@@ -864,6 +876,14 @@ private fun BackgroundTool(
                                         Brush.verticalGradient(bg.colors.map { Color(it) })
                                     )
                                     is TemplateBackground.Color -> Modifier.background(Color(bg.colorValue))
+                                    is TemplateBackground.Pattern -> Modifier.background(
+                                        Brush.linearGradient(
+                                            listOf(
+                                                Color(bg.baseColor),
+                                                Color(bg.accentColor).copy(alpha = 0.7f)
+                                            )
+                                        )
+                                    )
                                     else -> Modifier.background(Color.Gray)
                                 }
                             )

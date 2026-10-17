@@ -147,7 +147,7 @@ fun ExploreScreen(
                 )
                 Spacer(modifier = Modifier.height(Dimens.SpaceXxs))
                 Text(
-                    text = "Search across 270+ Hindi, Hinglish & English designs",
+                    text = "Search across 300+ Hindi, Hinglish & English designs",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

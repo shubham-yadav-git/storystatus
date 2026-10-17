@@ -14,11 +14,14 @@ class BackgroundDeserializer : JsonDeserializer<TemplateBackground> {
     ): TemplateBackground {
         val jsonObject = json.asJsonObject
         return when {
-            jsonObject.has("colorValue") -> {
-                context.deserialize(jsonObject, TemplateBackground.Color::class.java)
+            jsonObject.has("patternType") || jsonObject.has("pattern") -> {
+                context.deserialize(jsonObject, TemplateBackground.Pattern::class.java)
             }
             jsonObject.has("colors") -> {
                 context.deserialize(jsonObject, TemplateBackground.Gradient::class.java)
+            }
+            jsonObject.has("colorValue") -> {
+                context.deserialize(jsonObject, TemplateBackground.Color::class.java)
             }
             jsonObject.has("resourceName") -> {
                 context.deserialize(jsonObject, TemplateBackground.ImageResource::class.java)
