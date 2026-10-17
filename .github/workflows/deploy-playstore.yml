@@ -44,8 +44,15 @@ jobs:
         run: chmod +x gradlew
       
       - name: Decode Keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > $GITHUB_WORKSPACE/keystore-original
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "❌ Error: KEYSTORE_BASE64 secret is not configured!"
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 --decode > $GITHUB_WORKSPACE/keystore-original
           
           if [ ! -s $GITHUB_WORKSPACE/keystore-original ]; then
             echo "❌ Error: Keystore decode failed - file is empty"
@@ -61,10 +68,10 @@ jobs:
             keytool -importkeystore \
               -srckeystore $GITHUB_WORKSPACE/keystore-original \
               -srcstoretype PKCS12 \
-              -srcstorepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+              -srcstorepass "$KEYSTORE_PASSWORD" \
               -destkeystore $GITHUB_WORKSPACE/keystore.jks \
               -deststoretype JKS \
-              -deststorepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+              -deststorepass "$KEYSTORE_PASSWORD" \
               -noprompt
             echo "KEYSTORE_TYPE=JKS" >> $GITHUB_ENV
             rm $GITHUB_WORKSPACE/keystore-original
@@ -81,19 +88,19 @@ jobs:
           KEYSTORE_TYPE: ${{ env.KEYSTORE_TYPE }}
       
       - name: Prepare Service Account JSON
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}
         run: |
-          SECRET_VAL="${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}"
-          if [ -z "$SECRET_VAL" ]; then
-            echo "❌ Error: PLAY_STORE_SERVICE_ACCOUNT_JSON secret is empty or not configured in GitHub repository settings!"
-            echo "Please configure this secret in GitHub: Settings -> Secrets and variables -> Actions"
+          if [ -z "$SERVICE_ACCOUNT_JSON" ]; then
+            echo "❌ Error: PLAY_STORE_SERVICE_ACCOUNT_JSON secret is empty or not configured!"
             exit 1
           fi
           
-          if [[ "$SECRET_VAL" =~ ^[[:space:]]*\{ ]]; then
-            echo "$SECRET_VAL" > $GITHUB_WORKSPACE/service-account.json
+          if [[ "$SERVICE_ACCOUNT_JSON" =~ ^[[:space:]]*\{ ]]; then
+            echo "$SERVICE_ACCOUNT_JSON" > $GITHUB_WORKSPACE/service-account.json
             echo "Service account JSON provided as raw text."
           else
-            echo "$SECRET_VAL" | base64 --decode > $GITHUB_WORKSPACE/service-account.json
+            echo "$SERVICE_ACCOUNT_JSON" | base64 --decode > $GITHUB_WORKSPACE/service-account.json
             echo "Service account JSON decoded from base64."
           fi
           
