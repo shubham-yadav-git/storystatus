@@ -76,14 +76,14 @@ class DefaultTemplateRepository(
         val all = getAllTemplates()
         // 20 Curated standout launch templates representing distinct design styles across categories
         val featuredIds = listOf(
-            "att_1", "att_13", "att_15",
-            "shayari_1", "shayari_13", "shayari_16",
-            "love_1", "love_11", "love_14",
-            "mot_1", "mot_11", "mot_15",
-            "friend_1", "friend_9", "friend_12",
-            "sad_1", "sad_7",
-            "bday_1", "bday_7",
-            "fest_1"
+            "att_42", "att_46", "att_50", "att_13",
+            "shayari_42", "shayari_44", "shayari_47", "shayari_16",
+            "love_40", "love_42", "love_44",
+            "mot_40", "mot_42", "mot_44",
+            "friend_39", "friend_41",
+            "sad_36", "sad_39",
+            "bday_36", "bday_37",
+            "fest_38", "fest_39", "fest_41"
         )
         val curated = featuredIds.mapNotNull { fId -> all.find { it.id == fId } }
         return if (curated.size >= 10) curated else all.take(20)
