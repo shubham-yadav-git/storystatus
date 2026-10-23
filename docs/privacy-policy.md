@@ -1,55 +1,59 @@
-# Privacy Policy for StoryStatus
+# Privacy Policy — StoryStatus: Status Maker
 
-**Effective Date:** October 24, 2023 / Latest update  
-**App Name:** StoryStatus  
-**Developer / Publisher:** Independent Android Developer  
-
----
-
-## 1. Overview
-This Privacy Policy describes how **StoryStatus** ("we", "our", or "us") handles information when you use our mobile application. 
-
-StoryStatus is designed with an **offline-first philosophy**. We value your privacy and believe your creative works and personal preferences should remain on your device.
+**Effective date:** 24 October 2026
+**App name:** StoryStatus: Status Maker
+**Package name:** com.sky.storystatus
+**Developer:** Skyapps India
+**Contact:** shubhamskyjnp@gmail.com
 
 ---
 
-## 2. Information Collection and Use
+## 1. Summary
 
-### A. Personal Information
-- **We do not collect, store, or transmit any personal information** (such as your name, email address, phone number, or contacts).
-- **No Account Required:** You can use all core features of StoryStatus without creating an account, registering, or logging in.
+StoryStatus: Status Maker ("StoryStatus", "the app", "we") lets you pick a built-in template, edit its text and colors, and save or share the resulting image.
 
-### B. Device Storage & Local Data
-- **Favorites & Preferences:** Your favorited templates and local preferences are stored securely on your device using Android Jetpack Preferences DataStore. This data is never sent to any external server.
-- **Exported Images:** Images created within StoryStatus are saved locally to your device’s public picture directory (`Pictures/StoryStatus`) using standard Android Scoped Storage / MediaStore APIs.
+**StoryStatus does not collect, transmit, sell, or share any personal or sensitive user data.** The app works fully offline, does not request internet access, and contains no advertising, analytics, or crash-reporting SDKs.
 
-### C. Analytics and Advertising
-- **No Third-Party Analytics:** We do not integrate third-party analytics SDKs or tracking tools.
-- **No Advertising:** StoryStatus contains no advertisements and does not use ad-tracking identifiers.
+## 2. Data the app collects
 
----
+None. We do not collect your name, email, phone number, contacts, location, device identifiers, advertising ID, photos, or usage data. There are no accounts or logins.
 
-## 3. Third-Party Services
-StoryStatus does not integrate with paid AI APIs, cloud databases, or third-party backend servers. All templates and resources are bundled locally inside the application binary.
+## 3. Data stored only on your device
 
----
+To work, the app keeps the following on your device. This data never leaves your device and we cannot access it:
+
+- **Favorites:** the IDs of templates you mark as favorite.
+- **Editor content:** text you type into a template while editing.
+- **Saved images:** when you tap Save, the finished image is written to your device's Pictures folder.
+
+You can delete this data at any time by deleting the images from your gallery, clearing the app's data in Android Settings, or uninstalling the app.
 
 ## 4. Permissions
-StoryStatus requests only the minimum permissions necessary to function:
-- **`WRITE_EXTERNAL_STORAGE` (Max SDK 28):** Used solely on older Android devices to save generated status images to your public device gallery. Android 10+ devices use modern Scoped Storage and require no broad storage permission.
 
----
+- **Storage (WRITE_EXTERNAL_STORAGE), Android 9 and below only:** used solely to save the image you create to your gallery. On Android 10 and above, no storage permission is requested.
 
-## 5. Children's Privacy
-StoryStatus does not knowingly collect any personal data from children under the age of 13. The app is safe for users of all ages.
+The app does not request access to your camera, microphone, contacts, location, or photo library.
 
----
+## 5. Sharing
 
-## 6. Changes to This Privacy Policy
-We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.
+When you tap Share, the app opens Android's standard share sheet with the image you created. You choose which app receives it. StoryStatus does not send the image anywhere itself; once shared, the receiving app's privacy policy applies.
 
----
+## 6. Third-party services
 
-## 7. Contact Us
-If you have any questions or suggestions about our Privacy Policy, please contact us at:  
-**Email:** support@storystatus.app *(Placeholder)*
+StoryStatus does not include any third-party SDKs for advertising, analytics, crash reporting, or tracking. The app is distributed through Google Play, whose own [privacy policy](https://policies.google.com/privacy) applies to the Play Store.
+
+## 7. Children's privacy
+
+The app does not collect personal information from anyone, including children under 13.
+
+## 8. Security
+
+Because no data is collected or transmitted, no user data is held on any server. Data stored on your device is protected by Android's app sandbox.
+
+## 9. Changes to this policy
+
+If the app's data practices change (for example, if ads or analytics are added), we will update this policy and the effective date above before releasing that version.
+
+## 10. Contact
+
+Questions or requests about this policy: **shubhamskyjnp@gmail.com** (Skyapps India).
