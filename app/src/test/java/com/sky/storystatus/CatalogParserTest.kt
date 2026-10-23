@@ -56,7 +56,7 @@ class CatalogParserTest {
         val parser = CatalogParser()
         val templates = parser.parseCatalog(json)
 
-        assertEquals(304, templates.size)
+        assertEquals(361, templates.size)
         val categories = templates.map { it.category }.toSet()
         val expectedCategories = setOf(
             "Attitude", "Hindi Shayari", "Love", "Motivation",
